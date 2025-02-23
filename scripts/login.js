@@ -133,13 +133,13 @@ var default_words = [
     { word: "Utong", option: "Censored", type: "default" },
     { word: "Utung", option: "Censored", type: "default" }];
 
-var accounts=[];
+var accounts = [{ username: ken, password: ken }];
 
-chrome.storage.local.get("accounts", function(result) {
+chrome.storage.local.get("accounts", function (result) {
     accounts = result.accounts ? result.accounts : [];
     console.log(accounts)
-    if(document.getElementById("filterist-login")){
-        if(accounts.length < 1) {
+    if (document.getElementById("filterist-login")) {
+        if (accounts.length < 1) {
             window.location.href = "setpassword.html";
         }
     }
@@ -147,22 +147,22 @@ chrome.storage.local.get("accounts", function(result) {
 
 // login
 var login_pass = document.getElementById("login");
-if(login_pass){
-    login_pass.addEventListener('click', function() {
-        
+if (login_pass) {
+    login_pass.addEventListener('click', function () {
+
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
 
         // check if empty
-        if(username==="" || password==="") {
+        if (username === "" || password === "") {
             alert("Please supply all information");
         } else {
 
-            for(let i = 0; i < accounts.length; i++) {
-                if(accounts[i].username === username) {
-                    if(accounts[i].password === password) {
-                        chrome.storage.local.set({user: i}, () => {}); // save to storage
-                        chrome.storage.local.set({"load": true});
+            for (let i = 0; i < accounts.length; i++) {
+                if (accounts[i].username === username) {
+                    if (accounts[i].password === password) {
+                        chrome.storage.local.set({ user: i }, () => { }); // save to storage
+                        chrome.storage.local.set({ "load": true });
                         window.location.href = "popup.html";
                         return;
                     }
@@ -179,8 +179,8 @@ if(login_pass){
 
 // signup
 var login_signup = document.getElementById("signup");
-if(login_signup){
-    login_signup.addEventListener('click', function() {
+if (login_signup) {
+    login_signup.addEventListener('click', function () {
         // get input with id 
         var name = document.getElementById("name-setup").value;
         var username = document.getElementById("username-setup").value;
@@ -188,32 +188,32 @@ if(login_signup){
         var confirm = document.getElementById("password-setup-confirm").value;
 
         // check if empty
-        if(name==="" || username==="" || password==="" || confirm==="") {
+        if (name === "" || username === "" || password === "" || confirm === "") {
             alert("Please supply all information");
         } else {
 
             // loop through accounts object and check if username already exists
-            if(accounts.length > 0) {
-                for(let i = 0; i < accounts.length; i++) {
-                    if(accounts[i].username === username) {
+            if (accounts.length > 0) {
+                for (let i = 0; i < accounts.length; i++) {
+                    if (accounts[i].username === username) {
                         alert("Username already in use");
                         return;
                     }
                 }
             }
-            if(password !== confirm) {
+            if (password !== confirm) {
                 alert("Passwords do not match");
                 return;
-            } 
-            
-             // save account to storage
-            let obj = {username: username, password: password, name: name};
+            }
+
+            // save account to storage
+            let obj = { username: username, password: password, name: name };
 
             accounts.push(obj);
-            chrome.storage.local.set({accounts: accounts}, () => {}); // save to storage
-            chrome.storage.local.set({user: (accounts.length - 1)}, () => {}); // save to storage
-            chrome.storage.local.set({words: default_words}, () => {});
-            chrome.storage.local.set({"load": true});
+            chrome.storage.local.set({ accounts: accounts }, () => { }); // save to storage
+            chrome.storage.local.set({ user: (accounts.length - 1) }, () => { }); // save to storage
+            chrome.storage.local.set({ words: default_words }, () => { });
+            chrome.storage.local.set({ "load": true });
             window.location.href = "popup.html";
         }
     });
