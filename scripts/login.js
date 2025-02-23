@@ -133,50 +133,49 @@ var default_words = [
     { word: "Utong", option: "Censored", type: "default" },
     { word: "Utung", option: "Censored", type: "default" }];
 
-var accounts = [{ username: "ken", password: "ken" }];
+var accounts = [];
 
-
+// Load accounts from Chrome storage
 chrome.storage.local.get("accounts", function (result) {
-    accounts = result.accounts ? result.accounts : [];
-    console.log(accounts)
-    if (document.getElementById("filterist-login")) {
-        if (accounts.length < 1) {
-            window.location.href = "setpassword.html";
-        }
+    accounts = Array.isArray(result.accounts) ? result.accounts : [];
+
+    console.log(accounts);
+
+    if (document.getElementById("filterist-login") && accounts.length < 1) {
+        window.location.href = "setpassword.html";
     }
 });
 
-// login
-var login_pass = document.getElementById("login");
-if (login_pass) {
-    login_pass.addEventListener('click', function () {
+// Login button event listener
+var loginButton = document.getElementById("login");
+if (loginButton) {
+    loginButton.addEventListener('click', function () {
+        var username = document.getElementById("username").value.trim();
+        var password = document.getElementById("password").value.trim();
 
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-
-        // check if empty
         if (username === "" || password === "") {
             alert("Please supply all information");
-        } else {
+            return;
+        }
 
-            for (let i = 0; i < accounts.length; i++) {
-                if (accounts[i].username === username) {
-                    if (accounts[i].password === password) {
-                        chrome.storage.local.set({ user: i }, () => { }); // save to storage
-                        chrome.storage.local.set({ "load": true });
-                        window.location.href = "popup.html";
-                        return;
-                    }
-                    else {
-                        alert("Wrong password");
-                        return;
-                    }
-                }
+        // Find the user
+        let userIndex = accounts.findIndex(acc => acc.username === username);
+
+        if (userIndex !== -1) {
+            if (accounts[userIndex].password === password) {
+                chrome.storage.local.set({ user: userIndex }, () => { });
+                chrome.storage.local.set({ "load": true }, () => {
+                    window.location.href = "popup.html";
+                });
+            } else {
+                alert("Wrong password");
             }
+        } else {
             alert("User does not exist");
         }
     });
 }
+
 
 // signup
 var login_signup = document.getElementById("signup");
