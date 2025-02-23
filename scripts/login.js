@@ -133,7 +133,8 @@ var default_words = [
     { word: "Utong", option: "Censored", type: "default" },
     { word: "Utung", option: "Censored", type: "default" }];
 
-var accounts = [{ username: ken, password: ken }];
+var accounts = [{ username: "ken", password: "ken" }];
+
 
 chrome.storage.local.get("accounts", function (result) {
     accounts = result.accounts ? result.accounts : [];
