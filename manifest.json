@@ -1,0 +1,28 @@
+{
+    "name" : "Filterist",
+    "description" : "Filterist is a simple and easy to use tool for filtering vulgar words",
+    "version": "1.0.0",
+    "author": "Add Author Here",
+    "manifest_version": 3,
+
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["scripts/filterist.js"]
+        }
+    ],
+
+    "action" : {
+        "default_popup": "pages/login.html",
+        "default_title": "Filterist",
+        "default_icon": {
+            "48": "images/filterist.png"
+        }
+    },
+
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab"
+    ]
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&display=swap');
+
+        body {
+            width: 650px;
+            height: 370px;
+            background-color: #132e19;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .logo {
+            height: 3rem;
+            width: 3rem;
+        }
+
+        .logo-name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #a5ffd0;
+            margin-left: 2.2rem;
+            margin-top: 2.0rem;
+            font-family: 'Roboto Serif', serif;;
+        }
+
+        .links {
+            margin-left: 7rem;
+        }
+
+        #home {
+            color: #00f1ff;
+        }
+
+        #filterist-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500; 
+            margin-left: 1rem;
+            font-family: 'Roboto Serif', serif;;
+        }
+
+        .filterist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .login-header {
+            margin-right: 5rem;
+        }
+
+        .filterist-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 20rem;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #test-word {
+            background-color: #2b4a32;
+            border: 1px solid #c7b589;
+            text-justify: center;
+            text-align: center;
+            width: 20rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            color: white;
+        }
+
+        #login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            background-color: #c8ddc3;
+            border: none;
+            padding: 0.5rem;
+            height: 3rem;
+            width: 10rem;
+            border: 1px solid #A6BBAF;
+            
+        }
+
+        .logo-name {
+            font-size: 1rem;
+            font-weight: 550;
+        }
+
+        #test-output {
+            background-color: #2b4a32;
+            border: 1px solid #c7b589;
+            text-justify: center;
+            text-align: center;
+            width: 20rem;
+            height: 2.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            color: #c7b589;
+
+        }
+
+        #test {
+            background-color: #132e19;
+            border: 5px solid #c7b589;
+            width: 7rem;
+            height: 2.5rem;
+            display: flex;
+            color: white;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2rem;
+            margin-top: 1rem;
+            font-family: "Roboto Serif", serif;
+
+        }
+
+        #inner {
+                width: 1rem;
+                height: 1rem;
+                top: 15px;
+                left: 20px;
+                position: absolute;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto Serif', serif;
+            color: white;
+        }
+
+        .filter-tag {
+            width: 20rem;
+            display: flex;
+            color: white;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .information {
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 0.6rem;
+            right: 0.5rem;
+        }
+
+        ::-webkit-input-placeholder{
+            color:#c7b589;
+        }
+
+    </style>
+
+</head>
+<body id="filterist-login">
+        <div id="filterist-header">
+
+            <div class="filterist" >
+                <div id="inner">
+                    <img class="logo" src="../images/filter.png" alt="notify" />
+                </div>
+                <div>
+                    <p class="logo-name">ILTERIST</p>
+                </div>
+            </div>
+
+            <div class="links">
+                <a href="popup.html" aria-disabled="true">Home</a>
+                <a id="home" href="#">Test</a>
+                <a href="listwords.html">Words</a> 
+                <a href="settings.html">Settings</a>
+                <a href="about.html">About</a>
+                <a href="information.html"><img class="information" src="../images/info.png" alt=""></a>
+            </div>
+
+            <div>
+
+            </div>
+        </div>
+
+        <!-- Input for testing -->
+        <div class="filterist-login">
+            <div class="filter-tag">
+                <p>Test a word:</p>
+            </div>
+            <input type="text" id="test-word" placeholder="Enter a word">
+            <div class="filter-tag">
+                <p>Result:</p>
+            </div>
+            <p id="test-output">Output will be seen here</p>
+            <button id="test" style="background-color:#2b4a32;" disabled>Check</button>
+        </div>
+        
+        <script src="../scripts/test.js"></script>
+</body>
+</html>

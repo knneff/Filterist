@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&display=swap');
+
+            body {
+                width: 650px;
+                height: 520px;
+                background-color: #132e19;
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            .logo {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            .logo-name {
+                font-size: 1rem;
+                font-weight: 500;
+                color: #a5ffd0;
+                margin-left: 2.2rem;
+                margin-top: 2.0rem;
+                font-family: 'Roboto Serif', serif;;
+            }
+
+            .links {
+                margin-left: 7rem;
+            }
+
+            #inner {
+                width: 1rem;
+                height: 1rem;
+                top: 15px;
+                left: 20px;
+                position: absolute;
+            }
+
+            #home {
+                color: #00f1ff;
+            }
+
+            #filterist-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 1rem;
+                font-weight: 500; 
+                margin-left: 1rem;
+                font-family: 'Roboto Serif', serif;;
+            }
+
+            .filterist-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .login-header {
+                margin-right: 5rem;
+            }
+
+            .filterist-login {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 20rem;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .filterist-footer {
+                background-color: #d8be7e;
+                height: 10rem;
+                width: 100%;
+                display: flex;
+                margin-top: 1rem;
+                justify-content:space-around;
+            }
+
+            .filter-container-1 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                align-content: center;
+                height: 10rem;
+                width: 100%;
+                margin-top: 0.6rem;
+            }
+
+            .filter-container-2 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                align-content: center;
+                height: 10rem;
+                width: 100%;
+                margin-top: 0.6rem;
+            }
+
+            .filter-container-3 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                height: 5rem;
+                width: 100%;
+                margin-top: 0.6rem;
+            }
+
+            hr {
+                width: 20rem;
+                height: 1px;
+                padding: 0;
+                margin: 4px;
+                background-color: #d8be7e;
+                border: solid 0.1px #d8be7e;
+                border-radius: 5rem;
+            }
+
+            .head {
+                font-size: 1rem;
+                font-weight: 500;
+                color: white;
+                font-family: 'Roboto Serif', serif;;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                letter-spacing: 3px;
+                margin-top: 1.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+
+            h1 {
+                padding: 0;
+                margin: 0;
+                font-size: 1rem;
+                font-family: 'Roboto Serif', serif;
+            }
+
+            .pic {
+                height: 9rem;
+                width: 16rem;
+            }
+
+            .bg-pic {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 10rem;
+                width: 17rem;
+                background-color: #d8be7e;
+            }
+
+            .filter-info {
+                color : white;
+                font-family: 'Roboto Serif', serif;
+                width: 20rem;
+                font-size: 0.9rem;
+                text-align: center;
+                line-height: 1.3rem
+            }
+
+            .filter-info2 {
+                color : white;
+                font-family: 'Roboto Serif', serif;
+                width: 28rem;
+                font-size: 0.9rem;
+                text-align: center;
+                line-height: 1.3rem
+            }
+
+            .social-icons {
+                width: 2rem;
+                height: 2rem;
+            }
+            
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .socials {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-content: center;
+                align-items: center;
+            }
+
+            .ctn {
+                margin-top: 1rem;
+            }
+
+            .social-creds {
+                font-size: 1rem;
+            }
+
+            .information {
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                top: 0.6rem;
+                right: 0.5rem;
+            }
+
+            #wordlist {
+                overflow-y:scroll;
+                overflow-x: hidden;
+                height: 100%;
+                margin-right: -8px;
+            }
+
+    </style>
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+</head>
+<body id="filterist-login">
+    <div id="filterist-header">
+        <div class="filterist" >
+            <div id="inner">
+                <img class="logo" src="../images/filter.png" alt="notify" />
+            </div>
+            <div>
+                <p class="logo-name">ILTERIST</p>
+            </div>
+        </div>
+        <div class="links">
+            <a href="popup.html">Home</a>
+            <a href="test.html">Test</a>
+            <a href="listwords.html">Words</a> 
+            <a href="settings.html">Settings</a>
+            <a id="home" href="about.html" aria-disabled="true">About</a>
+            <a href="information.html"><img class="information" src="../images/info.png" alt=""></a>
+        </div>
+        <div></div>
+    </div>
+
+    <div id="wordlist">
+        
+        <div class="head">
+            <p class="animate__animated animate__fadeInDown">A Filipino & Capampangan</p>
+            <hr class="animate__animated animate__fadeInRight">
+            <p class="animate__animated animate__fadeInUp">Profanity Filter</p>
+        </div>
+    
+        <div class="filter-container-1">
+            <p class="animate__animated animate__fadeInUp filter-info">A profanity Filter can make it simple for kids to enjoy online content without being exposed to inappropriate or hazardous information</p>
+            <div class="bg-pic">
+                <img class="animate__animated animate__fadeInRight pic" src="../images/pic1.png" alt="">
+            </div>
+        </div>
+    
+        <div class="filter-container-2">
+            <div class="bg-pic">
+                <img class="animate__animated animate__fadeInLeft pic" src="../images/pic2.png" alt="">
+            </div>
+            <p class="filter-info animate__animated animate__fadeInUp">The Filterist is a type of web extension that scans user-generated content (UGC) to filter out profanity within online communities, social platforms, marketplaces, and more</p>
+        </div>
+    
+        <div class="filter-container-3">
+            <p class="filter-info2 animate__animated animate__fadeInUp">Filterist also privdes moderation for youths and adults who want to gaurd themselves from harassing or harmful content.</p>
+        </div>
+    
+        <footer class="filterist-footer">
+            <div class="info">
+                <div class="ctn">
+                    <h1>Contacts</h1>
+                    <p class="social-creds">Email : filterist0@gmail.com</p>
+                </div>
+                <div class="ctn">
+                    <h1>Developers</h1>
+                    <p class="social-creds">CS65</p>
+                </div>
+            </div>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=100088403921380&mibextid=ZbWKwL" target="_blank"><img class="social-icons" src="../images/fb.png" alt=""></a>
+                <a href="https://instagram.com/filterist0?igshid=YmMyMTA2M2Y=" target="_blank"><img class="social-icons" src="../images/insta.png" alt=""></a>
+                <a href="https://twitter.com/filterist0?t=oFPnnFTVvjQDr5AOEcCTRg&s=09" target="_blank" ><img class="social-icons" src="../images/twitter.png" alt=""></a>
+                <a href="https://github.com/filterist0/filterist" target="_blank"><img class="social-icons" src="../images/github.png" alt=""></a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

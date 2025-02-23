@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&display=swap');
+
+        body {
+            width: 650px;
+            height: 520px;
+            background-color: #132e19;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .logo {
+            height: 3rem;
+            width: 3rem;
+        }
+
+        .logo-name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #a5ffd0;
+            margin-left: 2.2rem;
+            margin-top: 2.0rem;
+            font-family: 'Roboto Serif', serif;;
+        }
+
+        .links {
+            margin-left: 10rem;
+        }
+
+        #home {
+            color: #00f1ff;
+        }
+
+        #filterist-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500; 
+            margin-left: 1rem;
+            font-family: 'Roboto Serif', serif;;
+        }
+
+        .filterist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #inner {
+                width: 1rem;
+                height: 1rem;
+                top: 15px;
+                left: 20px;
+                position: absolute;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto Serif', serif;
+            color: #132e19;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Roboto Serif', serif;
+        }
+
+        .information {
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            top: 25rem;
+            left: 38.5rem;
+        }
+
+        .filter-tuts {
+            display: flex;
+            flex-direction: column;
+            overflow-y:scroll;
+            overflow-x: hidden;
+            height: 100%;
+            margin-right: -8px;
+        }
+
+        h1 {
+            padding: 0;
+            margin: 0;
+        }
+
+        .description {
+            margin-bottom: 1rem;
+        }
+
+        .inner-info2 {
+            margin-left: 2rem;
+            margin-top: 0.7rem;
+        }
+
+        .inner-ctn {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .inner-info {
+            margin-bottom: 0.7rem;
+        }
+
+        .filter-column1 {
+            width: 20rem;
+            height: 40rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background-color: #c7b589;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+
+        .filter-column2 {
+            width: 20rem;
+            height: 40rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background-color: #c7b589;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+
+        .filter-column3 {
+            width: 20rem;
+            height: 40rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background-color: #c7b589;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+
+        .filter-column4 {
+            width: 20rem;
+            height: 40rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background-color: #c7b589;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            padding: 1rem;
+        }
+
+        .column1-pos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end
+        }
+
+        .column2-pos {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end
+        }
+
+        .column3-pos {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end
+        }
+
+        .column4-pos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end
+        }
+
+        .line {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 20rem;
+            border : solid 1px #132e19;
+        }
+
+        .separator1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .separator2 {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .separator3 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .separator4 {
+            display: flex;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #133d39;
+            font-size: 1rem;
+            font-weight: 500; 
+            margin-left: 1rem;
+            font-family: 'Roboto Serif', serif;;
+        }
+
+    </style>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+</head>
+<body id="popup">
+        <div id="filterist-header">
+            <div class="filterist" >
+                <div id="inner">
+                    <img class="logo" src="../images/filter.png" alt="notify" />
+                </div>
+                <div>
+                    <p class="logo-name">ILTERIST</p>
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="filter-tuts">
+
+            <div class="column1-pos animate__animated animate__fadeInUp">
+                <div class="filter-column1">
+                    <div class="Home">
+                        <div class="separator1"><a href="popup.html"><h1>HOME ></h1></a></p></div>
+                        <hr class="line">
+                        <p class="description">Saving Words to filter</p>
+                        <div class="context">
+                            <p class="inner-info">1.	Choose a method of how you wanted the words to be filtered; Remove, Censored or Substitute</p>
+                            <div class="inner-ctn">
+                                <p class="inner-info2">a.	REMOVE - Filtered words will be removed and will leave a blank space on the screen</p>
+                                <p class="inner-info2">b.	CENSORED - Filtered words will be represented by asterisk (*).</p>
+                                <p class="inner-info2">c.	SUBSTITUTE - Filtered words will be substituted by the word you set.</p>
+                            </div>
+                            <p class="inner-info">2.	Type a profanity/foul words  you want to filter.</p>
+                            <p class="inner-info">3.	Click 'save' to save the word you want to be filtered.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column2-pos animate__animated animate__fadeInRight">
+                <div class="filter-column2">
+                    <div class="Home">
+                        <div class="separator2"><a href="test.html"><h1>TEST ></h1></a></div>
+                        <hr class="line">
+                        <p class="description">Testing if the filter works</p>
+                        <div class="context">
+                            <p class="inner-info">1.	Type a word or a sentence containing a profanity/foul words you want to test.</p>
+                            <p class="inner-info">2.	Click 'check' to know the result.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column3-pos animate__animated animate__fadeInLeft">
+                <div class="filter-column3">
+
+                    <div class="Home">
+                        <div class="separator3"><a href="listwords.html"><h1>WORDS ></h1></a></div>
+                        <hr class="line">
+                        <p class="description">Library of words and deleting of words</p>
+                        <div class="context">
+                            <p class="inner-info">1.	Choose a method of censoring</p>
+                            <p class="inner-info">2.	Type a word you want to search, then click 'search'</p>
+                            <div class="inner-ctn">
+                                <p class="inner-info2">a.	To delete a word: click on the 'garbage icon' on the right side of the word, then click 'save' to save</p>
+                                <p class="inner-info2">b.	To delete multiple words: Check the box of the words you want to delete, click 'delete', then click 'save' to save</p>
+                                <p class="inner-info2">c.	To delete all the words: Simply click 'delete all', then click 'save' to save</p>
+                            </div>
+                            <p class="inner-info">3.	Click 'restore defaults' to bring it back to default</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column4-pos animate__animated animate__fadeInDown">
+                <div class="filter-column4">
+                    <div class="Home">
+                        <div class="separator4"><a href="settings.html"><h1>SETTINGS ></h1></a></div>
+                        <hr class="line">
+                        <p class="description">changing password</p>
+                        <div class="context">
+                            <p class="inner-info">1.	On the first box: Type the new password you want to set</p>
+                            <p class="inner-info">2.	On the second box: Re-type the password you set, the password must match.</p>
+                            <p class="inner-info">3.	Click 'reset' to [Save the password][Re-set a new password]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

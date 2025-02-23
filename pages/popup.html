@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&display=swap');
+
+            body {
+                width: 650px;
+                height: 370px;
+                background-color: #132e19;
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            .logo {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            .logo-name {
+                font-size: 1rem;
+                font-weight: 500;
+                color: #a5ffd0;
+                margin-left: 2.2rem;
+                margin-top: 2.0rem;
+                font-family: 'Roboto Serif', serif;;
+            }
+
+            .links {
+                margin-left: 7rem;
+            }
+
+            #home {
+                color: #00f1ff;
+            }
+
+            #filterist-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 1rem;
+                font-weight: 500; 
+                margin-left: 1rem;
+                font-family: 'Roboto Serif', serif;;
+            }
+
+            select {
+                background-color: #132e19;
+                font-size: 0.8rem;
+                border: 5px solid #c7b589;
+                text-align: center;
+                height: 1.5rem;
+                margin-top: 0.6rem;
+                border-radius: 2rem;
+                color: white;
+                font-family: "Roboto Serif", serif;
+            }
+
+            #filterist-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #word, #subword {
+                background-color: #2b4a32;
+                border: 1px solid #c7b589;
+                text-justify: center;
+                text-align: center;
+                width: 20rem;
+                height: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.5rem;
+                margin-top: .5rem;
+
+            }
+
+            .selector {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #addWord {
+                background-color: #132e19;
+                border: 5px solid #c7b589;
+                width: 7rem;
+                height: 2.5rem;
+                display: flex;
+                color: white;
+                font-size: 0.8rem;
+                margin-left: 1rem;
+                justify-content: center;
+                align-items: center;
+                border-radius: 2rem;
+                margin-top: 0.5rem;
+                font-family: "Roboto Serif", serif;
+            }
+
+            #substitute {
+                background-color: #132e19;
+                border: 5px solid #c7b589;
+                width: 7rem;
+                height: 2.5rem;
+                display: flex;
+                color: white;
+                font-size: 0.8rem;
+                margin-left: 1rem;
+                justify-content: center;
+                align-items: center;
+                border-radius: 2rem;
+                margin-top: 0.5rem;
+                font-family: "Roboto Serif", serif;
+            }
+
+
+            .notify-buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1.8rem;
+            }
+
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 30px;
+                height: 19px;
+                margin-right: 0.8rem;
+            }
+
+            .switch input { 
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 11px;
+                width: 11px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            input:checked + .slider {
+                background-color: #00f1ff;
+            }
+
+            input:focus + .slider {
+                box-shadow: 0 0 1px #00f1ff;
+            }
+
+            input:checked + .slider:before {
+                -webkit-transform: translateX(11px);
+                -ms-transform: translateX(11px);
+                transform: translateX(11px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+                border-radius: 34px;
+            }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+
+            .toggle-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 3rem;
+                
+            }
+
+            .filterist {
+                display: flex;
+            }
+
+            #inner {
+                width: 1rem;
+                height: 1rem;
+                top: 15px;
+                left: 20px;
+                position: absolute;
+            }
+
+            .filter-input {
+                display: flex;
+                margin-top: 2rem;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .substitute {
+                display: flex;
+                margin-top: 0.1rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+                color: white;
+            }
+
+            .filter-info {
+                font-family: "Roboto Serif", serif;
+                font-size: 1.3rem;
+            }
+
+            .selec-div {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .censor-method {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1rem;
+            }
+
+            #censor-method {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 10rem;
+                height: 2.5rem;
+            }
+
+            .censor-method {
+                font-family: "Roboto Serif", serif;
+            }
+
+            .substitute-word {
+                font-family: "Roboto Serif", serif;
+                font-size: 1.3rem;
+            }
+
+            .substitution {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+            }
+
+            input {
+                color:white;
+            }
+
+            .toggle-filter-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                font-family: "Roboto Serif", serif;
+                height: 4.5rem;
+            }
+
+            .substi {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: flex-end;
+                font-size: 1rem;
+                font-family: "Roboto Serif", serif;
+                width: 28rem;
+                margin-bottom: 1rem;
+            }
+
+            .loader {
+                width: 6em;
+                height: 6em;
+                font-size: 10px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 45%;
+                left: 47%;
+            }
+
+            .loader .face {
+                position: absolute;
+                border-radius: 50%;
+                border-style: solid;
+                animation: animate023845 3s linear infinite;
+            }
+
+            .loader .face:nth-child(1) {
+                width: 100%;
+                height: 100%;
+                color: gold;
+                border-color: currentColor transparent transparent currentColor;
+                border-width: 0.2em 0.2em 0em 0em;
+                --deg: -45deg;
+                animation-direction: normal;
+            }
+
+            .loader .face:nth-child(2) {
+                width: 70%;
+                height: 70%;
+                color: lime;
+                border-color: currentColor currentColor transparent transparent;
+                border-width: 0.2em 0em 0em 0.2em;
+                --deg: -135deg;
+                animation-direction: reverse;
+            }
+
+            .loader .face .circle {
+                position: absolute;
+                width: 50%;
+                height: 0.1em;
+                top: 50%;
+                left: 50%;
+                background-color: transparent;
+                transform: rotate(var(--deg));
+                transform-origin: left;
+            }
+
+            .loader .face .circle::before {
+                position: absolute;
+                top: -0.5em;
+                right: -0.5em;
+                content: '';
+                width: 1em;
+                height: 1em;
+                background-color: currentColor;
+                border-radius: 50%;
+                box-shadow: 0 0 2em,
+                                0 0 4em,
+                                0 0 6em,
+                                0 0 8em,
+                                0 0 10em,
+                                0 0 0 0.5em rgba(255, 255, 0, 0.1);
+            }
+
+            @keyframes animate023845 {
+                to {
+                    transform: rotate(1turn);
+                }
+            }
+
+            .information {
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                top: 0.6rem;
+                right: 0.5rem;
+            }
+            
+
+
+        </style>
+    </head>
+    <body id="popup">
+
+        <div>
+            
+            <div id="filterist-header">
+                <div class="filterist" >
+                    <div id="inner">
+                        <img class="logo" src="../images/filter.png" alt="notify" />
+                    </div>
+                    <div>
+                        <p class="logo-name">ILTERIST</p>
+                    </div>
+                </div>
+                <div class="links">
+                    <a href="#" id="home" aria-disabled="true">Home</a>
+                    <a href="test.html">Test</a>
+                    <a href="listwords.html">Words</a> 
+                    <a href="settings.html">Settings</a>
+                    <a href="about.html">About</a>
+                    <a href="information.html"><img class="information" src="../images/info.png" alt=""></a>
+                </div>
+                <div></div>
+            </div>
+
+            <div class="loader">
+                <div class="face">
+                    <div class="circle"></div>
+                </div>
+                <div class="face">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="show">
+                <div id="filterist-container">
+                    <div class="notify-form">
+    
+                        <div class="filter-input">
+                            <p class="filter-info">Add Words and Phrases</p>   
+                            <input type="text" name="text" id="word" placeholder="Add word to prohibit"></input>
+                        </div>
+    
+                        <div class="selector">
+                            <div class="selec-div">
+                                <select name="censor-method" id="censor-method">
+                                    <option value="" disabled selected>Filter method</option>
+                                    <option value="Censored">Censored</option>
+                                    <option value="Substitute">Substitute</option>
+                                    <option value="Remove">Remove</option>
+                                </select>
+                                
+                            </div>
+                            <button id="addWord" style="background-color:#2b4a32;" disabled>
+                                Add
+                            </button>
+                        </div>
+                        <br>
+                        <div class="substitution">
+                            <p class="substitute-word">Set Substitute Word for Filtering Method</p>
+                            <div class="substitute">
+                                <input type="text" name="text" id="subword" placeholder="Set word to act as substitute"></input>
+                                <div>
+                                    <button id="substitute" style="background-color:#2b4a32;" disabled>
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="toggle-filter-container">
+                    <div class="toggle-container">
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-switch">
+                            <span class="slider round"></span>
+                        </label>
+                        <p class="filter-toggle-info">Turn on Filter</p>
+                    </div>
+    
+                    <div></div>
+    
+                    <div class="substi">
+                        <p id="substitute-word"></p>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+
+            <!-- <a href="settings.html" >settings page</a>
+            <a href="listwords.html" >words page</a> -->
+        <script type="module" src="../scripts/filterist.js"></script>
+    </body>
+</html>

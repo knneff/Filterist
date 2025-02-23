@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&display=swap');
+
+        body {
+            width: 650px;
+            height: 370px;
+            background-color: #132e19;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .logo {
+            height: 3rem;
+            width: 3rem;
+        }
+
+        .logo-name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #a5ffd0;
+            margin-left: 2.2rem;
+            margin-top: 2.0rem;
+            font-family: 'Roboto Serif', serif;;
+        }
+
+        .links {
+            margin-left: 7rem;
+        }
+
+        #home {
+            color: #00f1ff;
+        }
+
+        #filterist-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500; 
+            margin-left: 1rem;
+            font-family: 'Roboto Serif', serif;;
+        }
+
+        .filterist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #inner {
+                width: 1rem;
+                height: 1rem;
+                top: 15px;
+                left: 20px;
+                position: absolute;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto Serif', serif;
+            color: white;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 19px;
+            margin-right: 0.8rem;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 11px;
+            width: 11px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #3df321;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #3df321;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(11px);
+            -ms-transform: translateX(11px);
+            transform: translateX(11px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .toggle-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #c8ddc3;
+            border: none;
+            padding: 0.5rem;
+            height: 2rem;
+            
+            width: 8rem;
+            border: 1px solid #A6BBAF;
+        }
+
+        .password {
+            background-color: #2b4a32;
+            border: 1px solid #c7b589;
+            text-justify: center;
+            text-align: center;
+            width: 18rem;
+            height: 2.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            color: white;
+        }
+
+        #subword {
+            margin-top: 1rem;
+            background-color: #A6BBAF;
+            border: none;
+            padding: 0.8rem;
+            width: 20rem;
+            height: 0.8rem;
+            border-radius: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .substitute {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .reset {
+            display: flex;
+            flex-direction: column;
+            align-items:flex-end;
+            margin: 1rem;
+        }
+
+        .res, .signup {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        #substitute-word {
+            padding: 1rem
+        }
+
+        .pass {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin-top: 1rem;
+        }
+
+        #reset, #save, #newacc, #delacc {
+            background-color: #132e19;
+            border: 5px solid #c7b589;
+            width: 7rem;
+            height: 2.5rem;
+            display: flex;
+            color: white;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2rem;
+            font-family: "Roboto Serif", serif;
+        }
+
+        #reset, #save{
+            margin-top: 1rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            font-family: 'Roboto Serif', serif;
+            color: white;
+        }
+
+        .information {
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                top: 0.6rem;
+                right: 0.5rem;
+            }
+
+        ::-webkit-input-placeholder{
+            color:#c7b589;
+        }
+        
+        #newacc, #delacc {
+            width: 15rem;
+            height: 3rem;
+            text-align: center;
+        }
+
+        
+
+    </style>
+</head>
+<body id="popup">
+        <div id="filterist-header">
+            <div class="filterist" >
+                <div id="inner">
+                    <img class="logo" src="../images/filter.png" alt="notify" />
+                </div>
+                <div>
+                    <p class="logo-name">ILTERIST</p>
+                </div>
+            </div>
+            <div class="links">
+                <a href="popup.html">Home</a>
+                <a href="test.html" aria-disabled="true">Test</a>
+                <a href="listwords.html">Words</a> 
+                <a id="home" href="#">Settings</a>
+                <a href="about.html">About</a>
+                <a href="information.html"><img class="information" src="../images/info.png" alt=""></a>
+            </div>
+            <div></div>
+        </div>
+
+        <div class="res">
+            <div class="reset">
+                <div class="pass">
+                    <p>Name:</p>
+                    <input type="text" class="password" id="reset-name" name="fname" placeholder="Enter name"><br>
+                    <p>Username:</p>
+                    <input type="text" class="password" id="reset-username" name="fname2" placeholder="Enter username">
+                </div>
+                <button id="save" style="visibility: hidden;">
+                    Save
+                </button>
+            </div>
+            <div class="reset">
+                <!-- reset password -->
+                <div class="pass">
+                    <p>Change Password:</p>
+                    <input type="password" class="password" id="old-password" name="fname" placeholder="Enter old password">
+                    <input type="password" class="password" id="reset-password" name="fname" placeholder="Enter new password">
+                    <input type="password" class="password" id="reset-password1" name="fname2" placeholder="Confirm new password">
+                </div>
+                <button id="reset" style="visibility: hidden;">
+                    Reset
+                </button>
+            </div>
+        </div>
+        <div class="signup">
+            <button id="newacc">Create New Account</button>
+            <button id="delacc">Delete This Account</button>
+        </div>
+        
+
+    <a href="information.html"><img class="information" src="../images/info.png" alt=""></a>
+
+    <script src="../scripts/filterist.js"></script>
+</body>
+</html>
